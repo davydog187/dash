@@ -16,7 +16,8 @@ config :dash, DashWeb.Endpoint,
   secret_key_base: "V+fMea1A0Pj9MfPeVzRfioZLF5tZsSFmIinzw2vW0pr2P2ee31/ioHTfe5ZLoAjF",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
