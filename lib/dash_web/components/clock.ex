@@ -9,22 +9,30 @@ defmodule DashWeb.Components.Clock do
   prop time, :time, required: true
 
   @doc "The timestamp to display on the clock"
-  prop format, :atom, values: [:standard, :military], default: :standard, required: true
+  prop format, :atom, values: [:standard, :military], default: :standard
+
+  prop timezone, :string, default: "America/New_York"
 
   def render(assigns) do
     ~F"""
-      {#case @format}
-        {#match :standard}
-          <div>
-            <span class="text-4xl font-bold">{Calendar.strftime(@time, "%I:%M")}</span>
-            <span class="text-sm">{Calendar.strftime(@time, "%S")}</span>
-            <span class="text-4xl font-bold">{Calendar.strftime(@time, "%p")}</span>
+    {#case @format}
+      {#match :standard}
+        <div class="tabular-nums">
+          <span class="text-4xl font-bold">{format(@time, "%I:%M", @timezone)}</span>
+          <span class="text-sm">{format(@time, "%S", @timezone)}</span>
+          <span class="text-4xl font-bold">{format(@time, "%p", @timezone)}</span>
         </div>
-        {#match :military}
-            <span class="text-4xl font-bold">
-                {Calendar.strftime(@time, "%H:%M:%S")}
-            </span>
-      {/case}
+      {#match :military}
+        <span class="text-4xl font-bold tabular-nums">
+          {format(@time, "%H:%M:%S", @timezone)}
+        </span>
+    {/case}
     """
+  end
+
+  defp format(time, pattern, timezone) do
+    datetime = DateTime.new!(Date.utc_today(), time) |> DateTime.shift_zone!(timezone)
+
+    Calendar.strftime(datetime, pattern)
   end
 end

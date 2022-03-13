@@ -48,7 +48,8 @@ defmodule Dash.MixProject do
       {:tailwind, "~> 0.1", only: :dev},
       {:surface, github: "surface-ui/surface", branch: "master", override: true},
       {:surface_catalogue,
-       github: "surface-ui/surface_catalogue", branch: "ms-update-lv-js", override: true}
+       github: "surface-ui/surface_catalogue", branch: "ms-update-lv-js", override: true},
+      {:tzdata, "~> 1.1"}
     ]
   end
 
