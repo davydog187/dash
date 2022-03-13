@@ -19,8 +19,7 @@ defmodule DashWeb.Router do
   scope "/", DashWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    live "/demo", Demo
+    live "/", Dash
   end
 
   # Other scopes may use custom stacks.
@@ -48,7 +47,7 @@ defmodule DashWeb.Router do
   if Mix.env() == :dev do
     scope "/" do
       pipe_through :browser
-      surface_catalogue "/catalogue"
+      surface_catalogue("/catalogue")
     end
   end
 end

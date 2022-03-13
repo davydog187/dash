@@ -1,5 +1,4 @@
 defmodule DashWeb.Catalogue do
-
   use Surface.Catalogue
 
   def body do
