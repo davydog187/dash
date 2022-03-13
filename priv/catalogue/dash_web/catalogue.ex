@@ -2,7 +2,7 @@ defmodule DashWeb.Catalogue do
   use Surface.Catalogue
 
   def body do
-    [class: "bg-gray-700 text-red-400 p-8"]
+    [class: "bg-gray-700 text-gray-300 p-8"]
   end
 
   @impl true

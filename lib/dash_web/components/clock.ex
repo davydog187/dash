@@ -17,13 +17,13 @@ defmodule DashWeb.Components.Clock do
     ~F"""
     {#case @format}
       {#match :standard}
-        <div class="tabular-nums">
+        <div class="tabular-nums text-white">
           <span class="text-4xl font-bold">{format(@time, "%I:%M", @timezone)}</span>
           <span class="text-sm">{format(@time, "%S", @timezone)}</span>
           <span class="text-4xl font-bold">{format(@time, "%p", @timezone)}</span>
         </div>
       {#match :military}
-        <span class="text-4xl font-bold tabular-nums">
+        <span class="text-4xl text-white font-bold tabular-nums">
           {format(@time, "%H:%M:%S", @timezone)}
         </span>
     {/case}
