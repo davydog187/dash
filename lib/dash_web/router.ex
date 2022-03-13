@@ -1,6 +1,8 @@
 defmodule DashWeb.Router do
   use DashWeb, :router
 
+  import Surface.Catalogue.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -18,6 +20,7 @@ defmodule DashWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/demo", Demo
   end
 
   # Other scopes may use custom stacks.
@@ -39,6 +42,13 @@ defmodule DashWeb.Router do
       pipe_through :browser
 
       live_dashboard "/dashboard", metrics: DashWeb.Telemetry
+    end
+  end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      surface_catalogue "/catalogue"
     end
   end
 end

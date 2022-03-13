@@ -7,7 +7,7 @@ defmodule Dash.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: Mix.compilers(),
+      compilers: Mix.compilers() ++ [:surface],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -26,6 +26,7 @@ defmodule Dash.MixProject do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:dev), do: ["lib"] ++ catalogues()
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -44,7 +45,10 @@ defmodule Dash.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:tailwind, "~> 0.1", only: :dev}
+      {:tailwind, "~> 0.1", only: :dev},
+      {:surface, github: "surface-ui/surface", branch: "master", override: true},
+      {:surface_catalogue,
+       github: "surface-ui/surface_catalogue", branch: "ms-update-lv-js", override: true}
     ]
   end
 
@@ -58,6 +62,12 @@ defmodule Dash.MixProject do
     [
       setup: ["deps.get"],
       "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
+    ]
+  end
+
+  def catalogues do
+    [
+      "priv/catalogue"
     ]
   end
 end
