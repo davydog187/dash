@@ -28,7 +28,7 @@ defmodule DashWeb.Dash do
       <h1 class="text-6xl font-medium italic text-blue-400">Dash</h1>
       <div class="grid grid-cols-6 mt-4 gap-3">
         {#for clock <- @clocks}
-            <TickingClock id={clock} timezone={clock}/>
+          <TickingClock id={clock} timezone={clock} />
         {/for}
         <Stock symbol="GME" price={100.0} pct_changed={0.1} />
         <Stock symbol="XOM" price={84.28} pct_changed={-0.82} />

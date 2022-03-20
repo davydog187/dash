@@ -18,7 +18,7 @@ defmodule DashWeb.Components.Stock do
         <span>{@price}</span>
         <span class="text-gray-600">|</span>
         <span class={"text-red-400": @pct_changed < 0, "text-green-400": @pct_changed >= 0}>
-            {format_pct(@pct_changed)}
+          {format_pct(@pct_changed)}
         </span>
       </div>
     </div>

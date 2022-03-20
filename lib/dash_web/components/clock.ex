@@ -11,6 +11,7 @@ defmodule DashWeb.Components.Clock do
   @doc "The timestamp to display on the clock"
   prop format, :atom, values: [:standard, :military], default: :standard
 
+  @doc "The timezone of the clock"
   prop timezone, :string, default: "America/New_York"
 
   def render(assigns) do
