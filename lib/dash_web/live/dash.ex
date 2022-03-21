@@ -1,7 +1,7 @@
 defmodule DashWeb.Dash do
   use Surface.LiveView
 
-  alias DashWeb.Components.{Stock, TickingClock}
+  alias DashWeb.Components.{Agenda, Notes, Stock, TickingClock}
 
   def mount(_params, _session, socket) do
     if connected?(socket) do
@@ -32,6 +32,7 @@ defmodule DashWeb.Dash do
         {/for}
         <Stock symbol="GME" price={100.0} pct_changed={0.1} />
         <Stock symbol="XOM" price={84.28} pct_changed={-0.82} />
+        <Notes />
       </div>
     </section>
     """
