@@ -9,7 +9,10 @@ defmodule DashWeb.Dash do
     end
 
     socket =
-      assign(socket, clocks: ["America/New_York", "America/Montevideo", "America/Los_Angeles"])
+      assign(socket,
+        clocks: ["America/New_York", "America/Montevideo", "America/Los_Angeles"],
+        items: fetch_agenda()
+      )
 
     {:ok, socket}
   end
@@ -32,9 +35,27 @@ defmodule DashWeb.Dash do
         {/for}
         <Stock symbol="GME" price={100.0} pct_changed={0.1} />
         <Stock symbol="XOM" price={84.28} pct_changed={-0.82} />
-        <Notes />
+        <Agenda {=@items} />
+      </div>
+      <div class="mt-8">
+        <#Notes>
+        Things to do today...
+
+        * Go to The Big Elixir
+        * <sarcasm>eat beignets until I throw up</sarcasm>
+        </#Notes>
       </div>
     </section>
     """
+  end
+
+  defp fetch_agenda do
+    [
+      %{name: "Wake up", time: ~T[06:00:00]},
+      %{name: "Go to Big Elixir", time: ~T[09:00:00]},
+      %{name: "Hurricanes with Chris Bell", time: ~T[17:00:00]},
+      %{name: "Jazz show", time: ~T[21:00:00]},
+      %{name: "Find some shrimp etoufee", time: ~T[23:00:00]}
+    ]
   end
 end

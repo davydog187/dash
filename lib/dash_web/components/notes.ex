@@ -1,17 +1,12 @@
 defmodule DashWeb.Components.Notes do
   use Surface.MacroComponent
 
-  alias Surface.MacroComponent
-  alias Surface.IOHelper
   alias Surface.AST
+  alias Dash.Markdown, as: DashMark
 
   slot default
 
-  def expand(attributes, content, meta) do
-    ast = %AST.Literal{value: "test"}
-
-    quote_surface do
-      ~F[^ast]
-    end
+  def expand(_attributes, content, _meta) do
+    %AST.Literal{value: DashMark.to_html(content)}
   end
 end
