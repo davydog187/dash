@@ -4,8 +4,9 @@
 module.exports = {
   content: [
     './js/**/*.js',
-    '../lib/*_web.ex',
-    '../lib/*_web/**/*.ex',
+    '../lib/dash_web.ex',
+    '../lib/dash_web/**/*.ex',
+    '../lib/dash/**/*.ex',
     '../priv/**/*.ex',
     '../lib/dash_web/**/*.{ex,sface,heex,leex}',
     './lib/dash_web/components/stock.ex'

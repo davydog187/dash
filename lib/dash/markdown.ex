@@ -29,7 +29,7 @@ defmodule Dash.Markdown do
 
   defp process([]), do: []
 
-  defp process(["* " <> _ | rest] = list) do
+  defp process(["* " <> _ | _rest] = list) do
     ["<ul class=\"list-disc\">" | process_list(list)]
   end
 

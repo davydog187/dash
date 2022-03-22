@@ -29,20 +29,20 @@ defmodule DashWeb.Dash do
     ~F"""
     <section class="p-8">
       <h1 class="text-6xl font-medium italic text-blue-400">Dash</h1>
-      <div class="grid grid-cols-6 mt-4 gap-3">
+      <div class="grid grid-cols-3 mt-4 gap-x-3 gap-y-16">
         {#for clock <- @clocks}
           <TickingClock id={clock} timezone={clock} />
         {/for}
         <Stock symbol="GME" price={100.0} pct_changed={0.1} />
         <Stock symbol="XOM" price={84.28} pct_changed={-0.82} />
+        <Stock symbol="TSLA" price={420.0} pct_changed={0.34} />
         <Agenda {=@items} />
-      </div>
-      <div class="mt-8">
+        <div />
         <#Notes>
         Things to do today...
 
         * Go to The Big Elixir
-        * <sarcasm>eat beignets until I throw up</sarcasm>
+        * <sarcasm>eat beignets until I explode</sarcasm>
         </#Notes>
       </div>
     </section>

@@ -1,6 +1,10 @@
 defmodule DashWeb.Components.Agenda do
   use Surface.Component
 
+  @moduledoc """
+  A component for showing a list of agenda items for a day
+  """
+
   @doc """
   List of agenda items of the form `%{name: String.t(), time: Time.t()}`
   """
@@ -28,7 +32,7 @@ defmodule DashWeb.Components.Agenda do
 
   # TODO show an infinite list of things in the agenda and show the memory debugging tools
 
-  def format_time(time) do
+  defp format_time(time) do
     Calendar.strftime(time, "%H:%M")
   end
 
