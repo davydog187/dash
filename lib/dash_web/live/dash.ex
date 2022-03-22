@@ -1,7 +1,7 @@
 defmodule DashWeb.Dash do
   use Surface.LiveView
 
-  alias DashWeb.Components.{Agenda, Notes, Stock, TickingClock}
+  alias DashWeb.Components.{Agenda, CodeNav, Notes, Stock, TickingClock}
 
   def mount(_params, _session, socket) do
     if connected?(socket) do
@@ -45,6 +45,10 @@ defmodule DashWeb.Dash do
         * <sarcasm>eat beignets until I explode</sarcasm>
         </#Notes>
       </div>
+
+      <nav class="fixed right-10">
+        <CodeNav id="nav" />
+      </nav>
     </section>
     """
   end
