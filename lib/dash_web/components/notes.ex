@@ -1,5 +1,5 @@
 defmodule DashWeb.Components.Notes do
-  use Surface.MacroComponent
+  use Surface.Component
 
   @moduledoc """
   A (simple) Markdown component
@@ -8,10 +8,12 @@ defmodule DashWeb.Components.Notes do
   alias Surface.AST
   alias Dash.Markdown, as: DashMark
 
-  @doc "Notes in (simple) markdown format. Supports <sarcasm /> and unordered lists."
+  @doc "Notes in (simple) markdown format"
   slot default
 
-  def expand(_attributes, content, _meta) do
-    %AST.Literal{value: "<div>#{content}</div>"}
+  def render(assigns) do
+    ~F"""
+    <div><#slot /></div>
+    """
   end
 end
