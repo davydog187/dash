@@ -30,8 +30,6 @@ defmodule DashWeb.Components.Agenda do
     """
   end
 
-  # TODO show an infinite list of things in the agenda and show the memory debugging tools
-
   defp format_time(time) do
     Calendar.strftime(time, "%H:%M")
   end

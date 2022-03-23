@@ -38,12 +38,6 @@ defmodule DashWeb.Dash do
         <Stock symbol="TSLA" price={420.0} pct_changed={0.34} />
         <Agenda {=@items} />
         <div />
-        <#Notes>
-        Things to do today...
-
-        * Go to The Big Elixir
-        * <sarcasm>eat beignets until I explode</sarcasm>
-        </#Notes>
       </div>
 
       <nav class="fixed right-10">
