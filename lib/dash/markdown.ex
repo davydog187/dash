@@ -16,7 +16,10 @@ defmodule Dash.Markdown do
     Regex.replace(
       ~r[<sarcasm>(.*)</sarcasm>],
       content,
-      "<span class=\"italic text-blue-200\">\\1</span>"
+      fn _, text ->
+        spongebob = Dash.Spongebob.speak(text)
+        "<span class=\"italic text-blue-200\">#{spongebob}</span>"
+      end
     )
   end
 

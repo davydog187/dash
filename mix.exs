@@ -48,7 +48,8 @@ defmodule Dash.MixProject do
       {:tailwind, "~> 0.1", only: :dev},
       {:surface, "~> 0.7.3"},
       {:surface_catalogue, "~> 0.4.1"},
-      {:tzdata, "~> 1.1"}
+      {:tzdata, "~> 1.1"},
+      {:rustler, "~> 0.24.0"}
     ]
   end
 
