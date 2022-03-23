@@ -7,7 +7,8 @@ defmodule DashWeb.Components.Clock.Standard do
     catalogue: DashWeb.Catalogue,
     subject: DashWeb.Components.Clock,
     height: "400px",
-    title: "Standard, 12 hour time"
+    title: "Standard, 12 hour time",
+    container: {:div, class: "flex flex-col gap-3"}
 
   def render(assigns) do
     ~F"""

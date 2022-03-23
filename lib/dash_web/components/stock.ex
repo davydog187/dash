@@ -1,6 +1,10 @@
 defmodule DashWeb.Components.Stock do
   use Surface.Component
 
+  @moduledoc """
+  A component for showing a stock, price, and daily change
+  """
+
   @doc "The stock symbol, e.g. GME"
   prop symbol, :string, required: true
 

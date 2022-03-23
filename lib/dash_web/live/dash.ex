@@ -10,7 +10,7 @@ defmodule DashWeb.Dash do
 
     socket =
       assign(socket,
-        clocks: ["America/New_York", "America/Montevideo", "America/Los_Angeles"],
+        clocks: ["America/New_York", "America/Montevideo", "America/Chicago"],
         items: fetch_agenda()
       )
 

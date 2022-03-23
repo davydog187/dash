@@ -7,7 +7,8 @@ defmodule DashWeb.Components.Clock.Military do
     catalogue: DashWeb.Catalogue,
     subject: DashWeb.Components.Clock,
     height: "400px",
-    title: "Military, 24 hour time"
+    title: "Military, 24 hour time",
+    container: {:div, class: "flex flex-col gap-3"}
 
   alias DashWeb.Components.Clock
 

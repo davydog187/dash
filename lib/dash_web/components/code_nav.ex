@@ -4,7 +4,7 @@ defmodule DashWeb.Components.CodeNav do
   @moduledoc """
   Navigate between different git tags
 
-  For demonstrating the progression of code changes
+  For demonstrating the progression of code changes during the presentation.
   """
 
   alias Surface.Components.Form
