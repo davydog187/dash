@@ -12,6 +12,6 @@ defmodule DashWeb.Components.Notes do
   slot default
 
   def expand(_attributes, content, _meta) do
-    %AST.Literal{value: "<div>" <> DashMark.to_html(content) <> "</div>"}
+    %AST.Literal{value: "<div>#{content}</div>"}
   end
 end
