@@ -14,9 +14,9 @@ defmodule DashWeb.Components.Clock.Military do
 
   def render(assigns) do
     ~F"""
-    <Clock format={:military} time={~T[06:00:00]} />
-    <Clock format={:military} time={~T[12:00:00]} />
-    <Clock format={:military} time={~T[18:00:00]} />
+    <Clock time={~T[06:00:00]} />
+    <Clock time={~T[12:00:00]} />
+    <Clock time={~T[18:00:00]} />
     """
   end
 end
