@@ -10,7 +10,7 @@ defmodule DashWeb.Dash do
 
     socket =
       assign(socket,
-        clocks: ["America/New_York", "America/Montevideo", "America/Chicago"],
+        clock: "America/New_York",
         items: fetch_agenda()
       )
 
@@ -18,9 +18,7 @@ defmodule DashWeb.Dash do
   end
 
   def handle_info(:tick_clocks, socket) do
-    for clock <- socket.assigns.clocks do
-      TickingClock.tick(clock)
-    end
+    TickingClock.tick(socket.assigns.clock)
 
     {:noreply, socket}
   end
@@ -30,9 +28,7 @@ defmodule DashWeb.Dash do
     <section class="p-8">
       <h1 class="text-6xl font-medium italic text-blue-400">Dash</h1>
       <div class="grid grid-cols-3 mt-4 gap-x-3 gap-y-16">
-        {#for clock <- @clocks}
-          <TickingClock id={clock} timezone={clock} />
-        {/for}
+      <TickingClock id={@clock} timezone={@clock} />
       </div>
 
       <nav class="fixed right-10">
