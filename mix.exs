@@ -47,7 +47,7 @@ defmodule Dash.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:tailwind, "~> 0.1", only: :dev},
       {:surface, "~> 0.7.3"},
-      {:surface_catalogue, "~> 0.4.1"},
+      {:surface_catalogue, path: "../surface_catalogue"},
       {:tzdata, "~> 1.1"},
       {:rustler, "~> 0.24.0"}
     ]

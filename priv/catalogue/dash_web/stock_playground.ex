@@ -1,16 +1,23 @@
-defmodule DashWeb.Components.Stock.PriceUp do
+defmodule DashWeb.Components.Stock.Playground do
   @moduledoc """
-  Example of a stock price that is up today
+  Play around with a Stock component
   """
-  use Surface.Catalogue.Example,
+  use Surface.Catalogue.Playground,
     catalogue: DashWeb.Catalogue,
     subject: DashWeb.Components.Stock,
     height: "250px",
-    title: "Price Up"
+    title: "Stock Playground"
+
+  data props, :map,
+    default: %{
+      symbol: "TSLA",
+      price: 900.00,
+      pct_changed: 0.5
+    }
 
   def render(assigns) do
     ~F"""
-    <Stock symbol="GME" price={100.00} pct_changed={0.05} />
+    <Stock {...@props} />
     """
   end
 end
