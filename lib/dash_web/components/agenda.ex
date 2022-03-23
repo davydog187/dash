@@ -23,8 +23,6 @@ defmodule DashWeb.Components.Agenda do
           <span class="inline-block w-12 italic">{format_time(item.time)}</span>
           <span class="text-xl text-white text-bold">{item.name}</span>
         </li>
-      {#else}
-        <h3 class="text-2xl text-white text-extrabold">Nothing to do today</h3>
       {/for}
     </ul>
     """
