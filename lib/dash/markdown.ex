@@ -17,8 +17,7 @@ defmodule Dash.Markdown do
       ~r[<sarcasm>(.*)</sarcasm>],
       content,
       fn _, text ->
-        spongebob = Dash.Spongebob.speak(text)
-        "<span class=\"italic text-blue-200\">#{spongebob}</span>"
+        "<span class=\"italic text-blue-200\">#{text}</span>"
       end
     )
   end
