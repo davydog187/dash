@@ -30,20 +30,7 @@ defmodule DashWeb.Dash do
     <section class="p-8">
       <h1 class="text-6xl font-medium italic text-blue-400">Dash</h1>
       <div class="grid grid-cols-3 mt-4 gap-x-3 gap-y-16">
-        {#for clock <- @clocks}
-          <TickingClock id={clock} timezone={clock} />
-        {/for}
-        <Stock symbol="GME" price={100.0} pct_changed={0.1} />
-        <Stock symbol="XOM" price={84.28} pct_changed={-0.82} />
-        <Stock symbol="TSLA" price={420.0} pct_changed={0.34} />
-        <Agenda {=@items} />
-        <div />
-        <#Notes>
-        Things to do today...
-
-        * Go to The Big Elixir
-        * <sarcasm>eat beignets until I explode</sarcasm>
-        </#Notes>
+        <TickingClock :for={clock <- @clocks} id={clock} timezone={clock} />
       </div>
 
       <nav class="fixed right-10">
