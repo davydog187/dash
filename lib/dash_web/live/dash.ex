@@ -33,17 +33,6 @@ defmodule DashWeb.Dash do
         {#for clock <- @clocks}
           <TickingClock id={clock} timezone={clock} />
         {/for}
-        <Stock symbol="GME" price={100.0} pct_changed={0.1} />
-        <Stock symbol="XOM" price={84.28} pct_changed={-0.82} />
-        <Stock symbol="TSLA" price={420.0} pct_changed={0.34} />
-        <Agenda {=@items} />
-        <div />
-        <#Notes>
-        Things to do today...
-
-        * Go to The Big Elixir
-        * <sarcasm>eat beignets until I explode</sarcasm>
-        </#Notes>
       </div>
 
       <nav class="fixed right-10">
