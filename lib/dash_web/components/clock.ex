@@ -10,9 +10,6 @@ defmodule DashWeb.Components.Clock do
 
   def render(assigns) do
     ~F"""
-    <span class="text-4xl text-white font-bold tabular-nums">
-      {Calendar.strftime(@time, "%H:%M:%S")}
-    </span>
     """
   end
 end
